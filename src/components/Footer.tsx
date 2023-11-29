@@ -33,7 +33,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className={styles.parent}>
-            <h3 className="font-semibold">Navegar pela Devnation</h3>
+            <h3 className="font-semibold">Navegar</h3>
             <ul className={styles.ul}>
               <li className={styles.li}>Aprendendo</li>
               <li className={styles.li}>Vagas</li>

@@ -3,7 +3,7 @@ import { Icons } from "./Icons";
 import UserAuthenticationForm from "./UserAuthenticationForm";
 import { buttonVariants } from "./ui/Button";
 
-const SignIn = () => {
+const SignUp = () => {
   return (
     <div className="container mx-auto flex flex-col w-full justify-center space-y-6 sm:w-[400px]">
       <div className="flex flex-col space-y-4 text-center">
@@ -32,12 +32,12 @@ const SignIn = () => {
         <UserAuthenticationForm />
 
         <p className="px-8 text-center text-sm text-zinc-700">
-          Novo na Devnation?{" "}
+          Já faz parte da Devnation?{" "}
           <Link
-            href="/registro"
+            href="/entrar"
             className="hover:text-zinc-800 text-sm underline underline-offset-4"
           >
-            Cadastrar
+            Entrar
           </Link>
         </p>
       </div>
@@ -45,4 +45,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;

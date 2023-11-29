@@ -1,8 +1,4 @@
-import Image from "next/image";
-
-import futuristicImg from "../assets/image/undraw_futuristic_interface.svg";
 import { ChevronRight } from "lucide-react";
-import SignIn from "@/components/SignIn";
 
 export default function Home() {
   const researchSuggestions = [
@@ -78,18 +74,13 @@ export default function Home() {
 
   return (
     <main>
-      <section className="mt-40 flex justify-between p-4">
-        <SignIn />
-        <Image
-          src={futuristicImg}
-          alt="Imagem futurística"
-          width={450}
-          height={450}
-        />
+      <section className="mt-10 space-y-2 max-w-[50rem]">
+        <h1 className="text-4xl text-zinc-900">Bem vindo(a) à Devnation!</h1>
+        <p className="text-md text-zinc-700">A Devnation é uma rede social voltada para desenvolvedores, uma plataforma completa para devs encontarem vagas, criarem comunidades de estudo, issues, criar publicações, editar seus próprios perfis e mais!</p>
       </section>
 
-      <section className="mt-14 p-4 flex space-x-14">
-        <h2 className="text-4xl text-gray-800 font-medium">
+      <section className="mt-20 p-4 flex space-x-14">
+        <h2 className="text-3xl text-gray-800 font-medium">
           Encontre o <br /> emprego ou estágio <br /> certo para você
         </h2>
         <div className="flex flex-col">
@@ -128,7 +119,7 @@ export default function Home() {
           <h2 className="text-3xl">
             Participe de grupos <br /> com diversos temas
           </h2>
-          <p>
+          <p className="text-zinc-700">
             Veja o que outros desenvolvedores estão estudando <br /> e projetos
             pessoais que estão trabalhando.
           </p>
@@ -167,15 +158,15 @@ export default function Home() {
         <ul className="flex flex-col space-y-6">
           <li className="bg-[#EAE6DF] p-3 w-80 rounded-md flex items-center justify-between cursor-pointer hover:opacity-80">
             Encontre um colega de trabalho
-             <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-4 h-4" />
           </li>
           <li className="bg-[#EAE6DF] p-3 w-80 rounded-md flex items-center justify-between cursor-pointer hover:opacity-80">
             Encontre um emprego
-             <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-4 h-4" />
           </li>
           <li className="bg-[#EAE6DF] p-3 w-80 rounded-md flex items-center justify-between cursor-pointer hover:opacity-80">
             Encontre um curso ou treinamento
-             <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-4 h-4" />
           </li>
         </ul>
       </section>
