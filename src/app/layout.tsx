@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/Toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +33,8 @@ export default function RootLayout({
         {authModal}
 
         <div className="container max-7xl mx-auto h-full pt-12">{children}</div>
+
+        <Toaster />
         <Footer />
       </body>
     </html>
