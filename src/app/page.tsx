@@ -1,11 +1,10 @@
-import Image from "next/image";
-
-import futuristicImg from "../assets/image/undraw_futuristic_interface.svg";
+import { buttonVariants } from "@/components/ui/Button";
+import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
-import SignIn from "@/components/SignIn";
+import Link from "next/link";
 
 export default function Home() {
-  const researchSuggestions = [
+  const research_suggestions = [
     {
       name: "engenheria",
       title: "Engenharia",
@@ -48,7 +47,7 @@ export default function Home() {
     },
   ];
 
-  const groupsSuggestions = [
+  const groups_suggestions = [
     {
       name: "javascript",
       title: "Javascript",
@@ -76,20 +75,23 @@ export default function Home() {
     },
   ];
 
+  const last_section_styles = clsx(
+    "bg-[#EAE6DF] p-3 w-80 rounded-md flex items-center justify-between cursor-pointer hover:opacity-80"
+  );
+
   return (
     <main>
-      <section className="mt-40 flex justify-between p-4">
-        <SignIn />
-        <Image
-          src={futuristicImg}
-          alt="Imagem futurística"
-          width={450}
-          height={450}
-        />
+      <section className="mt-10 space-y-2 max-w-[800px]">
+        <h1 className="text-4xl text-zinc-900">Bem vindo(a) à Devnation!</h1>
+        <p className="text-md text-zinc-700">
+          A Devnation é uma rede social voltada para desenvolvedores, uma
+          plataforma completa para devs encontarem vagas, criarem comunidades de
+          estudo, issues, criar publicações, editar seus próprios perfis e mais!
+        </p>
       </section>
 
-      <section className="mt-14 p-4 flex space-x-14">
-        <h2 className="text-4xl text-gray-800 font-medium">
+      <section className="mt-20 p-4 flex space-x-14">
+        <h2 className="text-3xl text-gray-800 font-medium">
           Encontre o <br /> emprego ou estágio <br /> certo para você
         </h2>
         <div className="flex flex-col">
@@ -97,11 +99,11 @@ export default function Home() {
             Sugestões de pesquisa
           </h3>
           <div className="flex flex-wrap gap-4 w-[26rem]">
-            {researchSuggestions.map((suggestion) => {
+            {research_suggestions.map((suggestion) => {
               return (
                 <ul
                   key={suggestion.name}
-                  className="bg-blue-500/10 text-sm font-light w-32 h-fit px-1 py-0.5 rounded-xl"
+                  className="bg-blue-500/10 text-sm font-light w-32 h-fit px-1 py-0.5 rounded-xl hover:opacity-70 ease-in-out transition-all"
                 >
                   <li className="overflow-hidden text-ellipsis text-center font-medium cursor-pointer">
                     {suggestion.title}
@@ -118,9 +120,15 @@ export default function Home() {
           Anuncie sua vaga e alcance <br /> diversos desenvolvedores
         </h2>
 
-        <button className=" bg-blue-500 text-white font-semibold h-fit p-2.5 rounded-full">
+        <Link
+          href="/"
+          className={buttonVariants({
+            variant: "default",
+            size: "lg",
+          })}
+        >
           Anuncie uma vaga
-        </button>
+        </Link>
       </section>
 
       <section className="mt-20 p-4 flex space-x-14">
@@ -128,7 +136,7 @@ export default function Home() {
           <h2 className="text-3xl">
             Participe de grupos <br /> com diversos temas
           </h2>
-          <p>
+          <p className="text-zinc-700">
             Veja o que outros desenvolvedores estão estudando <br /> e projetos
             pessoais que estão trabalhando.
           </p>
@@ -137,11 +145,11 @@ export default function Home() {
           <h3 className="text-gray-800 font-light mb-2">Sugestões de grupos</h3>
 
           <div className="flex flex-wrap gap-4 w-[26rem]">
-            {groupsSuggestions.map((suggestion) => {
+            {groups_suggestions.map((suggestion) => {
               return (
                 <ul
                   key={suggestion.name}
-                  className="bg-blue-500/10 text-sm font-light w-32 h-fit px-1 py-0.5 rounded-xl"
+                  className="bg-blue-500/10 text-sm font-light w-32 h-fit px-1 py-0.5 rounded-xl hover:opacity-70 ease-in-out transition-all"
                 >
                   <li className="overflow-hidden text-ellipsis text-center font-medium cursor-pointer">
                     {suggestion.title}
@@ -165,17 +173,17 @@ export default function Home() {
         </div>
 
         <ul className="flex flex-col space-y-6">
-          <li className="bg-[#EAE6DF] p-3 w-80 rounded-md flex items-center justify-between cursor-pointer hover:opacity-80">
+          <li className={last_section_styles}>
             Encontre um colega de trabalho
-             <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-4 h-4" />
           </li>
-          <li className="bg-[#EAE6DF] p-3 w-80 rounded-md flex items-center justify-between cursor-pointer hover:opacity-80">
+          <li className={last_section_styles}>
             Encontre um emprego
-             <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-4 h-4" />
           </li>
-          <li className="bg-[#EAE6DF] p-3 w-80 rounded-md flex items-center justify-between cursor-pointer hover:opacity-80">
+          <li className={last_section_styles}>
             Encontre um curso ou treinamento
-             <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-4 h-4" />
           </li>
         </ul>
       </section>

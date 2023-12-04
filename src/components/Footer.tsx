@@ -11,6 +11,30 @@ export default function Footer() {
     li: clsx("cursor-pointer hover:opacity-90"),
   };
 
+  const general_columns = [
+    "Cadastre-se",
+    "Central de ajuda",
+    "Sobre",
+    "Blog",
+    "Carreiras",
+    "Programadores",
+  ];
+
+  const browse_columns = ["Aprendendo", "Vagas", "Serviços", "Soluções"];
+
+  const directories_columns = [
+    "Usuários",
+    "Vagas",
+    "Empresas",
+    "Em destaque",
+    "Aprendendo",
+    "Publicações",
+    "Artigos",
+    "Notícias",
+    "Serviços",
+    "Pesquisa de pessoas",
+  ];
+
   return (
     <footer className="w-full h-fit bg-[#F3F2F0] mt-20 px-3 pt-2 flex flex-col">
       <div className="flex gap-32">
@@ -24,36 +48,37 @@ export default function Footer() {
           <div className={styles.parent}>
             <h3 className="font-semibold">Geral</h3>
             <ul className={styles.ul}>
-              <li className={styles.li}>Cadastre-se</li>
-              <li className={styles.li}>Central de ajuda</li>
-              <li className={styles.li}>Sobre</li>
-              <li className={styles.li}>Blog</li>
-              <li className={styles.li}>Carreiras</li>
-              <li className={styles.li}>Programadores</li>
+              {general_columns.map((item, index) => {
+                return (
+                  <li key={index} className={styles.li}>
+                    {item}
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className={styles.parent}>
-            <h3 className="font-semibold">Navegar pela Devnation</h3>
+            <h3 className="font-semibold">Navegar</h3>
             <ul className={styles.ul}>
-              <li className={styles.li}>Aprendendo</li>
-              <li className={styles.li}>Vagas</li>
-              <li className={styles.li}>Serviços</li>
-              <li className={styles.li}>Soluções</li>
+              {browse_columns.map((item, index) => {
+                return (
+                  <li key={index} className={styles.li}>
+                    {item}
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className={styles.parent}>
             <h3 className="font-semibold">Diretórios</h3>
             <ul className={styles.ul}>
-              <li className={styles.li}>Usuários</li>
-              <li className={styles.li}>Vagas</li>
-              <li className={styles.li}>Empresas</li>
-              <li className={styles.li}>Em destaque</li>
-              <li className={styles.li}>Aprendendo</li>
-              <li className={styles.li}>Publicações</li>
-              <li className={styles.li}>Artigos</li>
-              <li className={styles.li}>Notícias</li>
-              <li className={styles.li}>Serviços</li>
-              <li>Pesquisa de pessoas</li>
+              {directories_columns.map((item, index) => {
+                return (
+                  <li key={index} className={styles.li}>
+                    {item}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

@@ -1,21 +1,23 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/Toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Devnation",
   description: "A fullstack socialmedia platform with Next.js",
 };
 
 export default function RootLayout({
   children,
+  authModal,
 }: {
   children: React.ReactNode;
+  authModal: React.ReactNode;
 }) {
   return (
     <html
@@ -25,9 +27,14 @@ export default function RootLayout({
         inter.className
       )}
     >
-      <body className={inter.className}>
+      <body className="min-h-screen pt-14 antialiased">
         <Navbar />
+
+        {authModal}
+
         <div className="container max-7xl mx-auto h-full pt-12">{children}</div>
+
+        <Toaster />
         <Footer />
       </body>
     </html>

@@ -1,18 +1,12 @@
-import { ClassValue, clsx } from "clsx";
-import toast from "react-hot-toast";
-import { twMerge } from "tailwind-merge";
-
-interface ToastifyProps {
-  type: string;
-  message: string;
-};
-
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+ 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-};
+  return twMerge(clsx(inputs))
+}
 
-export function getCurrentYear() {
+export const getCurrentYear = () => {
   const currYear = new Date().getFullYear();
 
   return currYear;
-};
+}

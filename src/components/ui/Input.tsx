@@ -5,8 +5,7 @@ type InputProps = ComponentProps<"input"> & {
   error?: string;
 };
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ name, error, ...props }, ref) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ name, error, ...props }, ref) => {
     const styled = {
       root: "flex flex-col gap-1 w-full border-none",
       input: clsx(

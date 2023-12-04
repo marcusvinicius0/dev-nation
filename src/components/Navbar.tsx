@@ -12,8 +12,9 @@ import {
   Search,
   Bell,
 } from "lucide-react";
+import { buttonVariants } from "./ui/Button";
 
-const Navbar = () => {
+const Navbar = async () => {
   const isAuthenticated = false;
   const id = 1023;
 
@@ -86,7 +87,7 @@ const Navbar = () => {
             <Link href="/">
               <Image
                 src={dnLogo}
-                alt="Logo oficial da DevNation"
+                alt="Logo oficial da DevNation, um 'D' e 'N' modernos."
                 width={150}
                 height={40}
                 className="cursor-pointer hover:opacity-80"
@@ -124,12 +125,12 @@ const Navbar = () => {
               </ul>
             </nav>
 
-            <div className="flex flex-row items-center space-x-6">
-              <Link href="/registro">Cadastre-se agora</Link>
-              <button className="bg-blue-500 p-2 text-white rounded-md hover:opacity-90">
-                <Link href="/entrar">Entrar</Link>
-              </button>
-            </div>
+            <Link href="/entrar" className={buttonVariants({
+              variant: "default",
+              size: "default"
+            })}>
+              Entrar
+            </Link>
           </div>
         </header>
       )}
